@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGDex [REBORN]</title>
+
+<style>
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F3D26A;
+    --bg:#0B0B0B;
+    --card:#151515;
+    --border:#262626;
+    --text:#FFFFFF;
+    --muted:#A8A8A8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,11,11,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.language-select{
+    background:var(--card);
+    color:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.btn-secondary:hover{
+    background:rgba(212,175,55,.1);
+}
+
+/* FEATURES */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 25px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:80px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:35px;
+    color:var(--muted);
+}
+
+.footer-links{
+    margin-top:12px;
+}
+
+.footer-links a{
+    color:var(--gold);
+    text-decoration:none;
+    margin:0 10px;
+}
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+            CGDex
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Principal</a>
+            <a href="/Comandos/">Comandos</a>
+            <a href="/Privacidad/">Privacidad</a>
+            <a href="/Terminos/">Terminos</a>
+            <a href="/Soporte/">Soporte</a>
+
+            <select class="language-select"
+            onchange="window.location.href=this.value">
+
+                <option value="/CGDex-Official/">🇺🇸 English</option>
+                <option value="/CGDex-Official/es-lat/">🇲🇽 Español LATAM</option>
+                <option value="/CGDex-Official/es/">🇪🇸 Español (España)</option>
+                <option value="/CGDex-Official/pt-br/">🇧🇷 Português (Brasil)</option>
+                <option value="/CGDex-Official/ru/">🇷🇺 Русский</option>
+                <option value="/CGDex-Official/uk/">🇺🇦 Українська</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            <span>CGDex</span> [REBORN]
+        </h1>
+
+        <p>
+            A modern Discord bot designed to provide advanced tools,
+            efficient moderation and a reliable experience for
+            communities of any size.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn btn-primary">
+                Invite CGDex
+            </a>
+
+            <a href="/Comandos/" class="btn btn-secondary">
+                View Commands
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">
+        Features
+    </h2>
+
+    <p class="section-subtitle">
+        Everything you need to manage and improve your Discord server.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Commands</h3>
+            <p>
+                Powerful commands organized into multiple categories.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Moderation</h3>
+            <p>
+                Keep your community safe with advanced moderation tools.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Utility</h3>
+            <p>
+                Useful features for members and administrators.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Configuration</h3>
+            <p>
+                Customize the bot according to your server's needs.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Performance</h3>
+            <p>
+                Fast, stable and optimized for everyday use.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Support</h3>
+            <p>
+                Access support resources and get help whenever needed.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 CGDex. All rights reserved.</p>
+
+    <div class="footer-links">
+        <a href="/Privacidad/">Privacy Policy</a>
+        <a href="/Terminos/">Terms of Service</a>
+        <a href="/Soporte/">Support</a>
+    </div>
+
+</footer>
+
+</body>
+              </html>
