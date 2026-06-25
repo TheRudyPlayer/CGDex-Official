@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGDex Commands</title>
+
+<style>
+
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F3D26A;
+    --bg:#0B0B0B;
+    --card:#151515;
+    --border:#262626;
+    --text:#FFFFFF;
+    --muted:#A8A8A8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* Fondo */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,var(--gold),transparent 70%);
+    opacity:.08;
+    top:-250px;
+    left:-250px;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,var(--gold-light),transparent 70%);
+    opacity:.05;
+    bottom:-200px;
+    right:-200px;
+    pointer-events:none;
+}
+
+/* Navbar */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,11,11,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:var(--gold);
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:100px 20px 70px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* Documentation */
+
+.docs-container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 25px 100px;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:25px;
+}
+
+.sidebar{
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.02),
+        rgba(255,255,255,.01)
+    );
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:15px;
+    height:fit-content;
+}
+
+.category{
+    width:100%;
+    background:transparent;
+    border:none;
+    color:white;
+    text-align:left;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:8px;
+    transition:.3s;
+}
+
+.category:hover{
+    background:rgba(212,175,55,.08);
+    color:var(--gold);
+}
+
+.category.active{
+    background:rgba(212,175,55,.12);
+    color:var(--gold);
+    border:1px solid rgba(212,175,55,.25);
+}
+
+.command-panel{
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.02),
+        rgba(255,255,255,.01)
+    );
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+}
+
+.command-name{
+    color:var(--gold);
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.command-desc{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.command-options{
+    margin-top:20px;
+    padding:18px;
+    border-radius:14px;
+    background:rgba(212,175,55,.05);
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.command-options strong{
+    color:var(--gold-light);
+}
+
+.command-options ul{
+    margin-top:10px;
+    margin-left:20px;
+}
+
+.command-options li{
+    margin:6px 0;
+}
+
+/* Footer */
+
+footer{
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:35px;
+    color:var(--muted);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .docs-container{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+            CGDex
+        </div>
+
+        <div class="nav-links">
+            <a href="/CGDex-Official/">Home</a>
+            <a href="/CGDex-Official/commands/">Commands</a>
+        </div>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <h1>
+        <span>CGDex</span> Commands
+    </h1>
+
+    <p>
+        Browse command categories and discover the features available in CGDex.
+    </p>
+
+</section>
+
+<div class="docs-container">
+
+    <!-- Categories -->
+
+    <div class="sidebar">
+
+        <button class="category active">
+            ⚔️ Character
+        </button>
+
+        <button class="category">
+            💰 Economy
+        </button>
+
+    </div>
+
+    <!-- Commands -->
+
+    <div class="command-panel">
+
+        <div class="command-name">
+            /spawn_character
+        </div>
+
+        <div class="command-desc">
+            Spawn a specific character.
+        </div>
+
+        <div class="command-options">
+
+            <strong>Parameters</strong>
+
+            <ul>
+                <li>Character</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 CGDex. All rights reserved.
+</footer>
+
+</body>
+</html>
