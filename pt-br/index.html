@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGDex — Página Oficial</title>
 
+<style>
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F3D26A;
+    --bg:#0B0B0B;
+    --card:#151515;
+    --border:#262626;
+    --text:#FFFFFF;
+    --muted:#A8A8A8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,11,11,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.language-select{
+    background:var(--card);
+    color:white;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid var(--gold);
+    color:var(--gold);
+}
+
+.btn-secondary:hover{
+    background:rgba(212,175,55,.1);
+}
+
+/* FEATURES */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 25px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+    }
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:80px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:35px;
+    color:var(--muted);
+}
+
+.footer-links{
+    margin-top:12px;
+}
+
+.footer-links a{
+    color:var(--gold);
+    text-decoration:none;
+    margin:0 10px;
+}
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+            CGDex
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/CGDex-Official/pt-br/">Página Inicial</a>
+            <a href="/CGDex-Official/pt-br/commands/">Comandos</a>
+            <a href="/CGDex-Official/pt-br/privacy/">Política de Privacidade</a>
+            <a href="/CGDex-Official/pt-br/terms/">Termos de Serviço</a>
+            <a href="/CGDex-Official/pt-br/support/">Suporte</a>
+            
+            <select class="language-select"
+            onchange="window.location.href=this.value">
+
+                <option value="/CGDex-Official/">🇺🇸 English / Inglês</option>
+                <option selected value="/CGDex-Official/es-lat/">🇲🇽 Español LATAM / Espanhol (América Latina)</option>
+                <option value="/CGDex-Official/es/">🇪🇸 Español (España) / Espanhol (Espanha)</option>
+                <option value="/CGDex-Official/pt-br/">🇧🇷 Português (Brasil)</option>
+                <option value="/CGDex-Official/ru/">🇷🇺 Русский / Russo</option>
+                <option value="/CGDex-Official/uk/">🇺🇦 Українська / Ucraniano</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            <span>CGDex</span> [REBORN]
+        </h1>
+
+        <p>
+            Um bot moderno para o Discord, projetado para oferecer ferramentas avançadas,
+            moderação eficiente e uma experiência confiável para
+            comunidades de qualquer tamanho.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="https://discord.com/oauth2/authorize?client_id=1515526958866501652&permissions=4503737603714128&integration_type=0&scope=bot"
+            class="btn btn-primary"
+            target="_blank">
+
+            Convidar CGDex
+
+            </a>
+
+            <a href="/Comandos/" class="btn btn-secondary">
+                Ver Comandos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">
+        Características
+    </h2>
+
+    <p class="section-subtitle">
+        Tudo o que você precisa para gerenciar e otimizar seu servidor do Discord.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Comandos</h3>
+            <p>
+                Comandos poderosos organizados em diferentes categorias.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Configuração</h3>
+            <p>
+                Configure e personalize o bot de acordo com as necessidades do seu servidor.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Rendimiento</h3>
+            <p>
+                Bot rápido, estável e otimizado para o uso diário.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Suporte</h3>
+            <p>
+                Acesse os recursos de suporte e obtenha ajuda sempre que precisar.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 CGDex. Todos os direitos reservados</p>
+
+    <div class="footer-links">
+        <a href="/CGDex-Official/pt-br/privacy">Política e Privacidade</a>
+        <a href="/CGDex-Official/pt-br/terms/">Termos e Serviços</a>
+        <a href="/CGDex-Official/pt-br/support/">Suporte</a>
+    </div>
+
+</footer>
+
+</body>
+              </html>
