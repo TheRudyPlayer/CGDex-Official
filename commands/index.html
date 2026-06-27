@@ -325,5 +325,52 @@ footer{
     © 2026 CGDex. All rights reserved.
 </footer>
 
+<script>
+
+function showCharacter(){
+
+document.getElementById("commandPanel").innerHTML = `
+<div class="command-name">
+    /spawn_character
+</div>
+
+<div class="command-desc">
+    Spawn a specific character.
+</div>
+
+<div class="command-options">
+    <strong>Parameters</strong>
+    <ul>
+        <li>Character</li>
+    </ul>
+</div>
+`;
+
+}
+
+function showEconomy(){
+
+document.getElementById("commandPanel").innerHTML = `
+<div class="command-name">
+    /shop
+</div>
+
+<div class="command-desc">
+    Browse available items in the shop.
+</div>
+
+<div class="command-options">
+    <strong>Parameters</strong>
+    <ul>
+        <li>Item</li>
+        <li>Quantity</li>
+    </ul>
+</div>
+`;
+
+}
+
+</script>
+    
 </body>
 </html>
