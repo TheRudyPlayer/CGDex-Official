@@ -213,6 +213,14 @@ header{
     margin:6px 0;
 }
 
+.command-card{
+    background:rgba(255,255,255,.02);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
 /* Footer */
 
 footer{
@@ -297,28 +305,8 @@ footer{
 
     <!-- Commands -->
 
-    <div class="command-panel" id="commandPanel">
-
-        <div class="command-name">
-            /spawn
-        </div>
-
-        <div class="command-desc">
-            Spawn random character
-        </div>
-
-        <div class="command-options">
-
-            <strong>Parameters</strong>
-
-            <ul>
-                <li>None</li>
-            </ul>
-
-        </div>
-
-</div>
-
+    <div class="command-panel" id="commandPanel"></div>
+    
 <footer>
     © 2026 CGDex. All rights reserved.
 </footer>
@@ -430,6 +418,7 @@ document.getElementById("commandPanel").innerHTML = `
 `;
 
 }
+    showCharacter(document.querySelector(".category.active"));
 
 </script>
     
