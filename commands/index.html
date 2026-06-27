@@ -285,11 +285,11 @@ footer{
 
     <div class="sidebar">
 
-        <button class="category active" onclick="showCharacter()">
+        <button class="category active" onclick="showCharacter(this)">
             ⚔️ Character
         </button>
 
-        <button class="category" onclick="showEconomy()">
+        <button class="category" onclick="showEconomy(this)">
             💰 Economy
         </button>
 
@@ -327,7 +327,19 @@ footer{
 
 <script>
 
-function showCharacter(){
+function setActive(button){
+
+    document.querySelectorAll(".category").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+}
+
+function showCharacter(button){
+
+    setActive(button);
 
 document.getElementById("commandPanel").innerHTML = `
 <div class="command-name">
@@ -348,8 +360,9 @@ document.getElementById("commandPanel").innerHTML = `
 
 }
 
-function showEconomy(){
+function showEconomy(button){
 
+    setActive(button);
 document.getElementById("commandPanel").innerHTML = `
 <div class="command-name">
     /shop
