@@ -285,11 +285,11 @@ footer{
 
     <div class="sidebar">
 
-        <button class="category active">
+        <button class="category active" onclick="showCharacter()">
             ⚔️ Character
         </button>
 
-        <button class="category">
+        <button class="category" onclick="showEconomy()">
             💰 Economy
         </button>
 
@@ -297,7 +297,7 @@ footer{
 
     <!-- Commands -->
 
-    <div class="command-panel">
+    <div class="command-panel" id="commandPanel">
 
         <div class="command-name">
             /spawn_character
